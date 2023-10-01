@@ -56,14 +56,15 @@ Now that the A-record is added, return to Client-1 to 'ping' mainframe once more
 <img width="299" alt="image" src="https://github.com/chandy619/intuition-dns/assets/144288806/65f42a49-33ba-4ea2-9419-a055f74e375b">
 </p>
 <p>
-For the next portion of this tutorial, we will examine how DNS cache works. Go back to DC-1 and change the IP address of the A-record we previously created to 8.8.8.8. Now that mainframe has an new IP address, 'ping' mainframe once more to see what happens. You'll find that Client-1 is still able to successfully 'ping' mainframe, however, the old IP address is because the old IP address still exists in the DNS cache. To change this, open Command and 'Run as admninistrator'. Enter 'ipconfig /flushdns' to erase the DNS cache. 'ping' mainframe 
+For the next portion of this tutorial, we will examine how DNS cache works. Go back to DC-1 and change the IP address of the A-record we previously created to 8.8.8.8. Now that mainframe has an new IP address, 'ping' mainframe once more from Client-1's VM to see what happens. You'll find that Client-1 is still able to successfully 'ping' mainframe, however, the old IP address is because the old IP address still exists in the DNS cache. To change this, open Command and 'Run as admninistrator'. Enter 'ipconfig /flushdns' to erase the DNS cache. Next, 'ping' mainframe again to see the new IP address return. 
 </p>
 <br />
 
 <p>
-<image>
+<img width="487" alt="image" src="https://github.com/chandy619/intuition-dns/assets/144288806/ae25feff-156a-4d54-8523-9aadf8781104">
+<img width="299" alt="image" src="https://github.com/chandy619/intuition-dns/assets/144288806/402cd740-7493-4c09-98b2-956ce10fb795">
 </p>
 <p>
-Text
+Lastly, return to DC-1 and add a new record, but this time, select 'New Alias (CNAME)'. Fill-in the necessary fields as the photo above. This CNAME record will essentially maps 'search' to google.com. In Command, enter 'ping search' and see how google.com's public IP address returns. 
 </p>
 <br />
