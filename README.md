@@ -36,26 +36,27 @@ We'll begin with opening Command in Client-1. Enter 'ping mainframe'. The reques
 <br />
 
 <p>
-<image>
+<img width="534" alt="image" src="https://github.com/chandy619/intuition-dns/assets/144288806/6828920d-8210-4c81-8bf7-1731bd451e23">
 </p>
 <p>
-Switching to DC-1, open Server Manager from the Start menu. Click on 'Tools' located at the top right corner of the window and select 'DNS'. click on DC-1 on your left-hand side, select the folder labeled 'Foward Lookup Zones' which will expand for you to select the 'mydomain.com' folder. From here, right-click in the space to the right for a list of options; select 'New Host (A OR AAAA)...'
-</p>
-<br />
-
-<p>
-<image>
-</p>
-<p>
-Text
+Switching to DC-1, open Server Manager from the Start menu. Click on 'Tools' located at the top right corner of the window and select 'DNS'. click on DC-1 on your left-hand side, select the folder labeled 'Foward Lookup Zones' which will expand for you to select the 'mydomain.com' folder. From here, right-click in the space to the right for a list of options; select 'New Host (A OR AAAA)...' to add our own A-record. Fill-in the appropriate fields.
 </p>
 <br />
 
 <p>
-<image>
+<img width="353" alt="image" src="https://github.com/chandy619/intuition-dns/assets/144288806/b93fcf71-350b-4a96-a0c4-e71da513be69">
 </p>
 <p>
-Text
+Now that the A-record is added, return to Client-1 to 'ping' mainframe once more to find that it succeeds. Using the command 'nslookup', you'll also find that the local computer is able to return the IP address back.
+</p>
+<br />
+
+<p>
+<img width="310" alt="image" src="https://github.com/chandy619/intuition-dns/assets/144288806/9322ef37-2c31-45b8-aac0-cb45224d0e9b">
+<img width="299" alt="image" src="https://github.com/chandy619/intuition-dns/assets/144288806/65f42a49-33ba-4ea2-9419-a055f74e375b">
+</p>
+<p>
+For the next portion of this tutorial, we will examine how DNS cache works. Go back to DC-1 and change the IP address of the A-record we previously created to 8.8.8.8. Now that mainframe has an new IP address, 'ping' mainframe once more to see what happens. You'll find that Client-1 is still able to successfully 'ping' mainframe, however, the old IP address is because the old IP address still exists in the DNS cache. To change this, open Command and 'Run as admninistrator'. Enter 'ipconfig /flushdns' to erase the DNS cache. 'ping' mainframe 
 </p>
 <br />
 
